@@ -1,5 +1,5 @@
 const NOT_FOUND_RESPONSE = {status: 'error', error: 'not_found', reason: 'missing'};
-const BAD_JSON_REQUEST_RESPONSE = {status: 'error', error: 'bad_request', reason: 'invalid_json'};
+const BAD_DATE_REQUEST_RESPONSE = {status: 'error', error: 'bad_request', reason: 'invalid_date'};
 const SERVER_ERROR_RESPONSE = {status: 'error', error: 'internal_server_error'};
 
 /**
@@ -33,12 +33,12 @@ function sendSuccess(res, data) {
 }
 
 /**
- * Sends an error 400 response to the client. Useful when bad json is sent in the request.
+ * Sends an error 400 response to the client. Useful when bad data is sent in the request.
  * @function
  * @param {object} res - A response object.
  */
-function sendBadJsonRequest(res) {
-    res.status(400).json(BAD_JSON_REQUEST_RESPONSE);
+function sendBadDateRequest(res) {
+    res.status(400).json(BAD_DATE_REQUEST_RESPONSE);
 }
 
 /**
@@ -51,9 +51,9 @@ function sendServerError(res) {
 }
 
 exports.NOT_FOUND_RESPONSE = NOT_FOUND_RESPONSE;
-exports.BAD_JSON_REQUEST_RESPONSE = BAD_JSON_REQUEST_RESPONSE;
+exports.BAD_DATE_REQUEST_RESPONSE = BAD_DATE_REQUEST_RESPONSE;
 exports.SERVER_ERROR_RESPONSE = SERVER_ERROR_RESPONSE;
 exports.sendNotFound = sendNotFound;
 exports.sendSuccess = sendSuccess;
-exports.sendBadJsonRequest = sendBadJsonRequest;
+exports.sendBadDateRequest = sendBadDateRequest;
 exports.sendServerError = sendServerError;

@@ -9,8 +9,12 @@ const photoService = require('./photoservice');
 async function list(req, res)  {
     let earthDate = req.query.earth_date;
     let numFound = await photoService.callNASAMarsRoverPhotoAPI(earthDate);
-
-    standardResponse.sendSuccess(res, {photo_count:numFound});
+    if (numFound >= 0) {
+        standardResponse.sendSuccess(res, {photo_count:numFound});
+    }
+    else {
+        standardResponse.sendBadDateRequest(res);
+    }
 }
 
 exports.list = list;
