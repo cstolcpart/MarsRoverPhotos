@@ -39,6 +39,7 @@ async function callNASAMarsRoverPhotoAPI(earthDate) {
             else {
                 logger.log('error', error.message + ' - Error Accessing ' + requestSpec.url);
             }
+            photoCount = -2
         }
     }
     return photoCount;

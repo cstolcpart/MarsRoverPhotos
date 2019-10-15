@@ -13,7 +13,12 @@ async function list(req, res)  {
         standardResponse.sendSuccess(res, {photo_count:numFound});
     }
     else {
-        standardResponse.sendBadDateRequest(res);
+        if (numFound == -1) {
+            standardResponse.sendBadDateRequest(res);
+        }
+        else {
+            standardResponse.sendServerError(res);
+        }
     }
 }
 
