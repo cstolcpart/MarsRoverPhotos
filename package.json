@@ -1,0 +1,56 @@
+{
+  "name": "marsroverphotos",
+  "version": "1.0.0",
+  "description": "NASA Mars Rover Photo API to download photos from a given day",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest",
+    "lint": "eslint *.js src/*.js src/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cstolcpart/MarsRoverPhotos.git"
+  },
+  "keywords": [
+    "NASA",
+    "Mars",
+    "Rover",
+    "Photo",
+    "API"
+  ],
+  "author": "Corby Stolcpart <corby.stolcpart@gmail.com> (https://www.linkedin.com/in/corby-stolcpart)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cstolcpart/MarsRoverPhotos/issues"
+  },
+  "homepage": "https://github.com/cstolcpart/MarsRoverPhotos#readme",
+  "devDependencies": {
+    "babel-eslint": "^8.2.6",
+    "eslint": "^5.12.1",
+    "jest": "^24.0.0"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "dotenv": "^6.2.0",
+    "find-config": "^1.0.0",
+    "winston": "^2.4.2",
+    "express": "4.16.4",
+    "image-downloader": "^3.5.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coverageReporters": [
+      "text",
+      "cobertura"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
+  }
+}
